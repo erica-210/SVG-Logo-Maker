@@ -33,24 +33,6 @@ const questions = [
     },
 ];
 
-class Svg{
-    constructor(){
-        this.initialE1 = ''
-        this.shapeE1 = ''
-    }
-    render(){
-
-        return `<svg width="300" height="200">${this.shapeElement}${this.textElement}</svg>`
-    }
-    setTextElement(text,color){
-        this.textElement = `<text x="150" y="125" font-size="60" text-anchor="middle" fill="${color}">${text}</text>`
-    }
-    setShapeElement(shape){
-        this.shapeElement = shape.render()
-
-    }
-    
-}
 
 function writeToFile(fileName, data) {
    console.log(typeof(data)); 
