@@ -14,7 +14,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^8.2.4"
+    "canvas": "^2.11.2",
+    "inquirer": "^8.2.4",
+    "svg.js": "^2.7.1"
   },
   "devDependencies": {
     "jest": "^29.7.0"
