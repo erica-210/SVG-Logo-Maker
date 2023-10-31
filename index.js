@@ -1,13 +1,15 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-const SVG = require("svg.js");
+const MaxLengthInputPrompt = require('inquirer-maxlength-input-prompt')
+inquirer.registerPrompt('maxlength-input', MaxLengthInputPrompt)
 const { Circle, Square, Triangle } = require("./lib/shape");
 
 const questions = [
   {
-    type: "input",
+    type: "maxlength-input",
     message: "What 3 letters do you want to use?",
     name: "initials",
+    maxLength: 3,
     validate: (value) => {
       if (value) {
         return true;
@@ -69,6 +71,7 @@ function writeToFile(fileName, data) {
 
 function init() {
   inquirer.prompt(questions).then((data) => {
+
     let shape;
     switch (data.shape) {
       case "Circle":
