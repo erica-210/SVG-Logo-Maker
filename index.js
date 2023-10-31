@@ -4,6 +4,7 @@ const MaxLengthInputPrompt = require('inquirer-maxlength-input-prompt')
 inquirer.registerPrompt('maxlength-input', MaxLengthInputPrompt)
 const { Circle, Square, Triangle } = require("./lib/shape");
 
+// question setup to ask the users input
 const questions = [
   {
     type: "maxlength-input",
@@ -72,6 +73,7 @@ function writeToFile(fileName, data) {
 function init() {
   inquirer.prompt(questions).then((data) => {
 
+    // allows for each shape to get the data chosen my user to create svg logo
     let shape;
     switch (data.shape) {
       case "Circle":
